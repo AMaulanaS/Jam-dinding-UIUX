@@ -1,3 +1,4 @@
 # Jam-dinding-UIUX
 source code membuat jam ui design
-<img src="jam.jpg" alt="">
+<br><img src="jam.jpg" alt="" width="500" height="600">
+
