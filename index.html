@@ -1,0 +1,73 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock 2</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body class="light-theme">
+    <div class="wrapper">
+        <div class="clock-container">
+            <div class="clock-body">
+                <div class="clock-markings">
+
+                </div>
+                <div class="clock-labels">
+                    <div class="clock-label-row big">
+                        <div class="top-label">12</div>
+                        <div class="bottom-label">6</div>
+                    </div>
+                    <div class="clock-label-row">
+                        <div class="top-label">|</div>
+                        <div class="bottom-label">|</div>
+                    </div>
+                    <div class="clock-label-row">
+                        <div class="top-label">|</div>
+                        <div class="bottom-label">|</div>
+                    </div>
+                    <div class="clock-label-row big">
+                        <div class="top-label">3</div>
+                        <div class="bottom-label">9</div>
+                    </div>
+                    <div class="clock-label-row">
+                        <div class="top-label">|</div>
+                        <div class="bottom-label">|</div>
+                    </div>
+                    <div class="clock-label-row">
+                        <div class="top-label">|</div>
+                        <div class="bottom-label">|</div>
+                    </div>
+                </div>
+                <div class="clock-hands">
+                    <div class="clock-hour-hand"></div>
+                    <div class="clock-minute-hand"></div>
+                    <div class="clock-second-hand"></div>
+                </div>
+                <div class="clock-name-label">
+                    <div class="name">! Quartz</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="theme-switch-container">
+            <div class="theme-switch" id="theme-switch" data-state="light-mode">
+                <div class="slide-group">
+                    <div class="dark-mode label">Dark</div>
+                    <div class="switch-btn" onclick="switchTheme()">
+                        <div class="moon-icon icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M12 24C5.367 24 0 18.633 0 12 0 5.488 5.152.285 11.477.012a.741.741 0 01.742.515.747.747 0 01-.293.856A8.25 8.25 0 0016.5 16.5a8.178 8.178 0 005.93-2.516.752.752 0 01.898-.136c.293.16.45.496.371.824A12.006 12.006 0 0112 24zM9.098 1.902A10.476 10.476 0 001.5 12c0 5.79 4.71 10.5 10.5 10.5 4.086 0 7.676-2.3 9.41-5.82A9.663 9.663 0 0116.5 18c-5.375 0-9.75-4.375-9.75-9.75a9.73 9.73 0 012.348-6.348zm0 0"/><path d="M19.5 9a.75.75 0 01-.75-.75c0-1.652-1.348-3-3-3a.75.75 0 010-1.5c1.652 0 3-1.348 3-3a.75.75 0 011.5 0c0 1.652 1.348 3 3 3a.75.75 0 010 1.5c-1.652 0-3 1.348-3 3a.75.75 0 01-.75.75zm-1.266-4.5c.5.332.934.766 1.266 1.266A4.54 4.54 0 0120.766 4.5 4.54 4.54 0 0119.5 3.234 4.54 4.54 0 0118.234 4.5zm0 0M14.25 14.672a.75.75 0 01-.75-.75c0-1.035-.84-1.875-1.875-1.875a.75.75 0 010-1.5c1.035 0 1.875-.84 1.875-1.875a.75.75 0 011.5 0c0 1.035.84 1.875 1.875 1.875a.75.75 0 010 1.5c-1.035 0-1.875.84-1.875 1.875a.75.75 0 01-.75.75zm-.508-3.375c.188.148.36.32.508.508.148-.188.32-.36.508-.508a3.122 3.122 0 01-.508-.508c-.148.188-.32.36-.508.508zm0 0"/></svg>
+                        </div>
+                        <div class="sun-icon icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M16.254 7.746A6.052 6.052 0 0012 5.97a5.923 5.923 0 00-4.254 1.777A6.052 6.052 0 005.97 12c0 1.652.699 3.176 1.777 4.254A6.052 6.052 0 0012 18.03a5.923 5.923 0 004.254-1.777A6.052 6.052 0 0018.03 12a5.923 5.923 0 00-1.777-4.254zm-1.145 7.363A4.374 4.374 0 0112 16.383a4.374 4.374 0 01-3.11-1.274A4.374 4.374 0 017.618 12c0-1.207.477-2.316 1.274-3.11A4.374 4.374 0 0112 7.618c1.207 0 2.316.477 3.11 1.274A4.374 4.374 0 0116.382 12a4.374 4.374 0 01-1.274 3.11zm0 0M23.176 11.176H20.73a.837.837 0 00-.824.824c0 .445.38.824.824.824h2.446A.84.84 0 0024 12a.84.84 0 00-.824-.824zm0 0M12 19.906a.837.837 0 00-.824.824v2.446A.84.84 0 0012 24a.84.84 0 00.824-.824V20.73a.837.837 0 00-.824-.824zm0 0M20.477 19.332l-1.747-1.746c-.285-.316-.824-.316-1.144 0a.809.809 0 000 1.144l1.746 1.747a.809.809 0 101.145-1.145zm0 0M12 0a.84.84 0 00-.824.824V3.27c0 .445.379.824.824.824a.837.837 0 00.824-.824V.824A.84.84 0 0012 0zm0 0M20.508 3.523a.809.809 0 00-1.145 0L17.617 5.27a.809.809 0 000 1.144c.29.316.828.316 1.145 0l1.746-1.746a.809.809 0 000-1.145zm0 0M3.27 11.176H.824A.84.84 0 000 12c0 .445.348.824.824.824H3.27A.837.837 0 004.094 12a.837.837 0 00-.824-.824zm0 0M6.383 17.586c-.29-.316-.828-.316-1.145 0l-1.746 1.746a.809.809 0 101.145 1.145l1.746-1.747a.809.809 0 000-1.144zm0 0M6.383 5.27L4.637 3.523a.809.809 0 10-1.145 1.145l1.746 1.746A.809.809 0 106.383 5.27zm0 0"/></svg>
+                        </div>
+                    </div>
+                    <div class="light-mode label">Light</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
